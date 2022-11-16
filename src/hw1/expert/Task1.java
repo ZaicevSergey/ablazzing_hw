@@ -46,7 +46,8 @@ public class Task1 {
         }
 
 
-        Pattern patternEmail = Pattern.compile("\\w+@\\w+\\.[a-z]{2,3}");
+        Pattern patternEmail =
+                Pattern.compile("([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}");
         Matcher matcherEmail = patternEmail.matcher(strBuilder);
         while (matcherEmail.find()) {
             String email = matcherEmail.group();
